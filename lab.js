@@ -102,8 +102,7 @@ let {tacoma} = carDetails.model
 */
 
 function greeting( obj ) {
-  
-  
+  const {title, firstName, lastName} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -121,7 +120,10 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
+function totalPopulation(obj) {
+  const {utah, california, texas, arizona} = obj
+  return utah + california + texas + arizona
+}
 
 
 
@@ -135,7 +137,10 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj) {
+  const {carb, fat, protein} = obj
+  return [carb, fat, protein]
+}
 
 
 
@@ -157,7 +162,8 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -165,7 +171,7 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
+delete user.age
 
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
@@ -175,8 +181,18 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat  {
+    constructor(name, age, color){
+      this.name = name
+      this.age = age
+      this.color = color;
+    }
+}
 
+const savathun = new Cat ('Savathun', 8 , 'white')
+
+//console.log(savathun)
+console.log(savathun.name)
 
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
@@ -187,7 +203,23 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+    constructor(name, age, favoriteSpell){
+      this.name = name
+      this.age = age
+      this.favoriteSpell = favoriteSpell 
+    }
+
+  castSpell() {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+
+const ikora = new Wizard('Ikora Rey', 590, 'Nova Bomb'  )
+
+ikora.castSpell()
+
+
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -212,7 +244,25 @@ var user = {
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+    constructor(brand, model, storage, color, price){
+      this.brand = brand
+      this.model = model
+      this.storage = storage
+      this.color = color
+      this.price = price
+      this.sold = false
+    }
+
+  sell() {
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold`)
+  }
+
+  changePrice(newPrice){
+    this.price = newPrice
+  }
+}
 
   
 /*
@@ -225,7 +275,10 @@ var user = {
     - price: number
 */
 
-//Code Here
+const iPhone = new Phone('Apple', '13 Pro Max', 128, 'Sierra Blue', 1099.00)
+const galaxy = new Phone('Samsung', 'Samsung Galaxy S22', 256, 'Phantom White', 149.99)
+const pixel = new Phone('Google', 'Pixel 6 Pro', 512, 'Stormy Black', 1099.00)
+
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -234,7 +287,8 @@ var user = {
   Then console.log that object to see the price change
 */ 
 
-//Code Here 
+ pixel.changePrice(899.00)
+ console.log(pixel)
 
 
 /*
@@ -243,7 +297,8 @@ var user = {
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here 
+iPhone.sell()
+console.log(iPhone)
 
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
@@ -262,7 +317,8 @@ const colors = {
 }
 //do not edit this object
 
-//Code Here 
+let colorsCopy = [colors];
+console.log(colorsCopy)
 
 
 
@@ -290,8 +346,8 @@ const shippingInfo = {
 }
 //do not edit the objects above
 
-//Code Here
-
+let helensInfo = { contactInfo : shippingInfo }
+console.log(helensInfo)
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -308,15 +364,24 @@ const shippingInfo = {
   And finally, print the value of the mileage.
 */
 
-//Code Here 
+class Vehicle {
+  constructor(capacity, color, mileage){
+   this.capacity = capacity
+   this.color = color
+   this.mileage = mileage
+  }
+   move() {
+     this.miles += miles
+     console.log(this.miles)
+   }
 
+}
 
 /*
   Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
-//Code Here
-
+const myFirstVehicle = new Vehicle (5, 'Burgandy', 108000 )
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
