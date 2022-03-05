@@ -4,7 +4,10 @@
   Give it a key of name with the value being your name, and another key of age with the value being your age.
 */
 
-//Code here
+const me = {
+  name: 'Jake',
+  age: '23',
+}
 
 
 
@@ -15,23 +18,25 @@
 //name (a string), color (a string), age (a number),
 //and goodBoy/goodGirl (a boolean).
 
-//Code here
-
+const dog = {
+  name: 'Cocoa',
+  color: 'Brown',
+  age: 4,
+  goodGirl: true
+}
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-//Code here
+console.log(dog.name)
 
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
-//Code here
-
-
+console.log(dog['color'])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -39,22 +44,30 @@
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+const favoriteThings = {
+  band: 'Porter Robinson',
+  food: 'Tonkotsu Ramen',
+  person: 'Michelle',
+  book: 'Halo: Primordium',
+  movie: "Howl's Moving Castle",
+  holiday: 'Halloween'
+}
 
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
-
+favoriteThings.car = 'Koenigsegg Agera RS'
+favoriteThings['show'] = 'Its Always Sunny in Philidelphia'
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
+favoriteThings.food = 'Chicken nuggets'
+favoriteThings['book'] = 'Harry Potter'
 
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
@@ -72,8 +85,12 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
-
+let {red} = carDetails.color
+let {toyota} = carDetails.make
+let {tacoma} = carDetails.model
+// let {1994} = carDetails.year
+  // i get an error saying ": detected" but i am not exactly sure how to solve that, because if 
+  // i add a :, i get yet another error saying "let" is not allowed here
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -85,7 +102,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
