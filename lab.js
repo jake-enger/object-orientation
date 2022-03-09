@@ -391,18 +391,24 @@ const myFirstVehicle = new Vehicle (5, 'Burgandy', 108000 )
   new ones: make and isCool. (Hint: don't forget to call the super function)
 */
 
-//Code Here
+class Motorcycle extends Vehicle {
+  constructor(capacity, color, mileage, make, isCool) {
+    super(capacity, color, mileage)
+    this.make = make
+    this.isCool = isCool
+  }
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
-//Code Here 
+const myFirstMotorcycle = new Motorcycle(1, 'red', 150, 'Honda', true)
 
 /*
   Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
-
+myFirstMotorcycle.move(100)
 /*
   Let's make another class based off of Vehicle. 
 
@@ -419,8 +425,27 @@ const myFirstVehicle = new Vehicle (5, 'Burgandy', 108000 )
   This function should set isSeaworthy to be true
 */
 
-//Code Here
+class Boat extends Vehicle {
+  constructor(capacity, color, mileage, name, type, isSeaWorthy) {
+    super(capacity, color, mileage)
+    this.name = name
+    this.type = type
+    this.isSeaWorthy = isSeaWorthy
+  }
 
+  checkSeaWorthiness() {
+    if (this.isSeaWorthy) {
+      console.log(`The ${this.type} ${this.name} is seaworthy!`)
+    } else {
+      console.log(`You need to get your ${this.type} in shape!`)
+    }
+  
+ }
+
+    performMaintenance() {
+      this.isSeaWorthy = true
+    }
+  }
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
